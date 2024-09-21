@@ -1,0 +1,278 @@
+/* color variables */
+
+:root {
+    --background-col: #2C2A25;
+    --shaded-col: #872118;
+    --shaded-dark-col: #702019;
+    --lightened-col: #d8d8d8;
+    --darker-col: #22211f;
+}
+
+/* make all text unselectable */
+
+p, h1, h3, a {
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* general */
+
+body {
+    background-color: var(--background-col);
+    max-width: 100%;
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: var(--lightened-col);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+/* images */
+
+.image {
+    width: 200px;
+    height: 350px;
+    border-radius: 1cm;
+    padding: 0.5mm;
+    transition: 0.5s ease;
+}
+
+.image.poster {
+    width: 200px;
+    height: 300px;
+}
+
+.image.wide {
+    width: 250px;
+}
+
+.image.grayed:hover {
+    filter: grayscale(100%);
+}
+
+/* templates/header.php */
+
+div.header-nav {
+    overflow: hidden;
+    background-color: var(--shaded-col);
+    height: 75px;
+    position: relative;
+    left: 510px;
+    bottom: 70px;
+}
+
+div.header-nav>a {
+    float: left;
+    color: var(--lightened-col);
+    text-align: center;
+    padding: 28px 30px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+div.header-nav>a:hover, div.header-nav>a.active {
+    background-color: var(--lightened-col);
+    color: var(--shaded-col);
+    
+}
+
+/* templates/footer.php */
+
+div.footer {
+    background: var(--shaded-col);
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+div.footer>div.footer-text {
+    color: white;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+}
+
+div.space {
+    height: 150px;
+}
+
+/* index.php */
+
+div#home-container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+div#home-container h1 {
+    font-size: 18pt;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.25s;
+}
+
+div#home-container h1:hover {
+    color: white;
+    text-shadow: 0 0 20px #fff;
+}
+
+img#home-img {
+    width: 100%;
+    filter: brightness(50%);
+    transition: 0.5s;
+}
+
+img#home-img:hover {
+    filter: brightness(80%);
+}
+
+/* category header bar */
+
+div.category-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.category-nav>a {
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--lightened-col);
+}
+
+div.category-nav>a>div {
+    color: var(--lightened-col);
+    background-color: var(--shaded-col);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    margin: 5px;
+    padding: 20px;
+    border-radius: 2cm;
+}
+
+div.category-nav>a>div:hover, .category-nav>a>div.active {
+    color: var(--shaded-col);
+    background-color: var(--lightened-col);
+}
+
+/* thumbnails */
+
+div.thumb-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+div.thumb-row.centered {
+    justify-content: center;
+    align-items: center;
+}
+
+div.thumb-row.scrollable {
+    overflow-x: auto;
+}
+
+div.thumb-row.scrollable::-webkit-scrollbar {
+    background: var(--darker-col);
+    border-radius: 10px;
+    height: 20px;
+}
+
+div.thumb-row.scrollable::-webkit-scrollbar-thumb {
+    background: var(--shaded-col);
+    border-radius: 10px;
+}
+
+div.thumb-row.scrollable::-webkit-scrollbar-thumb:hover {
+    background: var(--lightened-col);
+}
+
+div.thumb-row div h3 {
+    color: var(--lightened-col);
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+div.thumb-row div h5 {
+    color: var(--lightened-col);
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: block;
+}
+
+div.thumb-row div {
+    margin: 5px;
+    padding: 20px;
+    transition: 0.5s ease;
+    border-radius: 1cm;
+    max-width: 200px;
+}
+
+div.thumb-row div:hover {
+    background-color: var(--shaded-col);
+}
+
+/* trivia.php */
+
+#random-fact-container {
+    position: relative;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    width: 80%;
+}
+
+#fact-img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 1cm;
+    filter: brightness(80%);
+}
+
+#fact-txt {
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 200%;
+    font-weight: bold;
+    text-shadow: -2px -1px 3px black;
+    user-select: none;
+    color: var(--lightened-col);
+}
+
+#fact-btn {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--shaded-col);
+    border: none;   
+    color: var(--lightened-col);
+    font-size: 200%;
+    border-radius: 1cm;
+    width: 200px;
+    height: 40px;
+    box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.548);
+}
+
+#fact-btn:hover {
+    background-color: var(--lightened-col);
+    color: var(--shaded-col);
+}
